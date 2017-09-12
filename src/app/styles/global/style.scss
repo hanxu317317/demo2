@@ -68,7 +68,11 @@ body {
 		}
 	}
 	.left-ul {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
 		&__li {
+			flex: 1;
 			width: 100%;
 			background: yellow;
 		}
