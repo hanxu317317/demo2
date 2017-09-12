@@ -14,17 +14,25 @@ export default class HeadSwiper extends Component {
             spaceBetween: 30
         });
     }
-    
+    renderNav() {
+        let Components = [];
+        for (let i = 1; i < 6; i++) {
+            Components.push(
+                <div className={`swiper-slide`} key={i}>
+                    <div className={`swiper-slide__bg${i}`} />
+                    <img className="swiper-slide__image" src={`/public/img/nav_${i}.jpg`} />
+                </div>
+            );
+        }
+        return Components;
+    }
     render() {
         return (
-            <div>
-                <div className="swiper-container">
-                    <div className="swiper-wrapper">
-                        <div className="swiper-slide blue-slide">slider1</div>
-                        <div className="swiper-slide red-slide">slider2</div>
-                        <div className="swiper-slide orange-slide">slider3</div>
-                    </div>
+            <div className="swiper-container" id="swiper">
+                <div className="swiper-wrapper">
+                    {this.renderNav()}
                 </div>
+                <div className="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets" />
             </div>
         );
     }

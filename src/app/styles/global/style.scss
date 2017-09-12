@@ -19,25 +19,67 @@ body {
 	margin: 0;
 }
 :global {
+	#swiper {
+		height: 30%;
+		max-height: 400px;
+		width: 100%;
+		position: absolute;
+		top:0;
+		left: 0;
+		& .swiper-slide {
+			position: relative;
+		}
+		@for $i from 1 to 5 {
+            .swiper-slide__bg$i {
+            	background-image: url(/public/img/nav_$(i).jpg);
+				background-size: 100% 100%;
+				filter: blur(15px);
+				width: 100%;
+				height: 100%;
+            }
+        }
+		& .swiper-slide__image{
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+	}
 	.swiper-slide {
 		line-height: 300px;
-		color: #fff;
+		color: black;
 		font-size: 36px;
 		text-align: center;
 	}
-	.blue-slide {
-		background: #4390EE;
+	#main {
+		background: red;
+		& .left {
+			width: 20%;
+			height: 100%;
+			background: green;
+			display: inline-block;
+			float: left;
+		}
+		& .right {
+			background: white;
+			height: 100%;
+		}
 	}
-	.red-slide {
-		background: #CA4040;
-	}
-	.orange-slide {
-		background: #FF8604;
-	}
-	.swiper-slide {
-		line-height: 300px;
-		color: #fff;
-		font-size: 36px;
-		text-align: center;
+	.left-ul {
+		&__li {
+			width: 100%;
+			background: yellow;
+		}
+		&__item {
+			line-height: 40px;
+			color:red;
+			display: block;
+			width: 100%;
+			text-decoration: none;
+			text-align: center;
+			font-size: 18px;
+		}
 	}
 }
