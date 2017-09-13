@@ -22,6 +22,38 @@ export default {
                     cb(null, require('container/children/culture'));
                 });
             }
+        },
+        {
+            path: 'member',
+            getComponent(location, cb) {
+                require.ensure([], (require) => {
+                    cb(null, require('container/children/member'));
+                });
+            }
+        },
+        {
+            path: 'market',
+            getComponent(location, cb) {
+                require.ensure([], (require) => {
+                    cb(null, require('container/children/market'));
+                });
+            }
+        },
+        {
+            path: 'ceo',
+            getComponent(location, cb) {
+                require.ensure([], (require) => {
+                    cb(null, require('container/children/ceo'));
+                });
+            }
+        },
+        {
+            path: 'goods',
+            getComponent(location, cb) {
+                require.ensure([], (require) => {
+                    cb(null, require('container/children/goods'));
+                });
+            }
         }
     ]
 };

@@ -10,7 +10,9 @@ export default class HeadSwiper extends Component {
     componentDidMount() {
         let swiper = new Swiper('.swiper-container', {
             pagination: '.swiper-pagination',
+            autoplay: 5000,
             paginationClickable: true,
+            loop: true,
             spaceBetween: 30
         });
     }

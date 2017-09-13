@@ -18,8 +18,8 @@ export default class App extends Component {
         let swiper = document.getElementById('swiper');
         let clientHeight = document.body.clientHeight;
         let main = document.getElementById('main');
-        main.style.height = clientHeight - swiper.offsetHeight + 'px';
-        main.style.marginTop = swiper.offsetHeight + 'px';
+        main.style.height = clientHeight  - 10 + 'px';
+        main.style.paddingTop = swiper.offsetHeight + 'px';
     }
 
     componentDidUpdate() {

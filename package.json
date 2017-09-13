@@ -1,23 +1,11 @@
 {
-  "name": "crm_fontend_web",
+  "name": "demo",
   "version": "1.0.0",
-  "description": "Meiqia CRM SFA",
-  "author": "Meiqia/Fontend",
+  "description": "demo",
+  "author": "hanxu",
   "main": "n",
-  "homepage": "https://git.meiqia.com/crm_platform/fontend_web#readme",
-  "repository": {
-    "type": "git",
-    "url": "git@git.meiqia.com:crm_platform/fontend_web.git"
-  },
-  "bugs": {
-    "url": "https://git.meiqia.com/crm_platform/fontend_web/issues"
-  },
+
   "keywords": [
-    "crm",
-    "sfa",
-    "Meiqia",
-    "react",
-    "redux"
   ],
   "scripts": {
     "dev": "gulp devConfig && better-npm-run start:dev",
