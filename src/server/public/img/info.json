@@ -1,8 +1,4 @@
-import React, { Component } from 'react';
-import _ from 'lodash';
-
-import PropTypes from 'prop-types';
-const groupList = [
+[
     {
         "group": "凤爪系列",
         "member": [
@@ -263,57 +259,4 @@ const groupList = [
             }
         ]
     }
-];
-export default class Home extends Component {
-    static propTypes = {
-    };
-    constructor() {
-        super();
-
-    }
-    renderList() {
-        let { id } = this.context.router.params;
-        let group = [];
-
-        if (id) {
-            id = id - 1;
-            group.push(groupList[id].member)
-        } else {
-            _.map(groupList, v => {
-                group.push(v.member);
-            })
-        }
-        let result = [];
-        console.log("group", group);
-        _.forEach(group, (gv, index) => {
-            gv.forEach(v => {
-                result.push(
-                    <div key={v.id} className="goods">
-                        <div className="goods-wrap">
-                            <img src={`/public/img/0/${v.id}.png`} style={{width: '180px', height: '135px'}} />
-                        </div>
-                        <p>{v.title}</p>
-                    </div>
-                )
-            })
-        })
-        return result;
-        console.log("result", result)
-    }
-    render() {
-        
-        console.log("this.rou", this.context.router);
-        return (
-            <div style={{maxWidth: '800px'}}>
-                {this.renderList()}
-            </div>
-        );
-    }
-}
-
-Home.contextTypes = {
-    router: PropTypes.object
-};
-
-
-
+]

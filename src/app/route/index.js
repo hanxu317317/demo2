@@ -48,7 +48,7 @@ export default {
             }
         },
         {
-            path: 'goods',
+            path: 'goods(/:id)',
             getComponent(location, cb) {
                 require.ensure([], (require) => {
                     cb(null, require('container/children/goods'));
