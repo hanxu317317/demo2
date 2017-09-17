@@ -11,7 +11,6 @@
     "dev": "gulp devConfig && better-npm-run start:dev",
     "build": "better-npm-run build",
     "lint": "eslint src/app",
-    "install": "npm install -d --registry=https://registry.npm.taobao.org",
     "update": "npm-check -u",
     "packageTest": "rm -rf dist && gulp testConfig && npm run build && gulp package",
     "package": "rm -rf dist && gulp prodConfig && npm run build && gulp package",

@@ -46,7 +46,8 @@ export default class HeadSwiper extends Component {
     componentDidMount() {
         var mySwiper = new Swiper('#swiper', {
             effect: 'coverflow',
-   
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
             initialSlide: 2,
             slidesPerView: 3,
             loop: false,
@@ -105,6 +106,8 @@ export default class HeadSwiper extends Component {
                 <div className="swiper-wrapper">
                     {this.renderNav()}
                 </div>
+                <div className="swiper-button-next"></div>
+                <div className="swiper-button-prev"></div>
             </div>
         );
     }

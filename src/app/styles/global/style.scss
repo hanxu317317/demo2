@@ -101,13 +101,22 @@ a {
 
 	}
 	#modal-top {
+
 		& .modal-dialog  {
 			width: 80%;
 			height: 80%;
+			
+		}
+		& p {
+			font-size: 16px;
+			line-height: 1.75em;
+			margin: 1.5em 0;
 		}
 		& .modal-content {
 			position: relative;
 			height: 100%;
+			line-height: 1.5em;
+			background: #f7f8f1;
 		}
 		& .close{
 			position: absolute;
@@ -116,6 +125,23 @@ a {
 		}
 		& .modal-body {
 			position: initial;
+		}
+	}
+	.goods {
+		width: 180px;
+		
+		float: left;
+		margin-left: 15px;
+		text-align: center;
+		&-wrap {
+			box-shadow: 0px 0 4px 2px rgba(52, 63, 75, 0.08);
+			padding: 5px 0;
+			
+		}
+		& p {
+			margin-top: 10px;
+		    font-size: 14px !important;
+			margin-bottom: 5;
 		}
 	}
 }

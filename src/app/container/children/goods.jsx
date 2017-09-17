@@ -304,7 +304,7 @@ export default class Home extends Component {
         
         console.log("this.rou", this.context.router);
         return (
-            <div style={{maxWidth: '800px'}}>
+            <div>
                 {this.renderList()}
             </div>
         );
