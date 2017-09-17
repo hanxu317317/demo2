@@ -15,29 +15,48 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        let swiper = document.getElementById('swiper');
+        var galleryTop = new Swiper('#gallery-top', {
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            effect : 'cube',
+            spaceBetween: 10,
+        });
+        let container = document.getElementById('container');
         let clientHeight = document.body.clientHeight;
-        let main = document.getElementById('main');
-        main.style.height = clientHeight  - 10 + 'px';
-        main.style.paddingTop = swiper.offsetHeight + 'px';
+        container.style.height = clientHeight + 'px';
+        // main.style.paddingTop = swiper.offsetHeight + 'px';
     }
 
     componentDidUpdate() {
     }
-
+//     <section id="main">
+//     <div className="left">
+//         <LeftNav />
+//     </div>
+//     <div className="right">
+//         {this.props.children && React.cloneElement(this.props.children, this.props)}
+//     </div>
+// </section>
     render() {
 
         return (
             <div id="container">
+                <div id="title">
+                    <div className="content slideInLeft animated">THIS is TITle</div>
+                </div>
                 <Swiper />
-                <section id="main">
-                    <div className="left">
-                        <LeftNav />
+                <div className="modal fade" id="modal-top" tabindex="-1" role="dialog">
+                    <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+                           
+                            <div className="modal-body" style={{height: '100%', overflow: 'auto'}}>
+                            <button type="button" className="close" style={{fontSize: '60px', marginTop:'-20px'}} data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                {this.props.children && React.cloneElement(this.props.children, this.props)}
+                            </div>
+                          
+                        </div>
                     </div>
-                    <div className="right">
-                        {this.props.children && React.cloneElement(this.props.children, this.props)}
-                    </div>
-                </section>
+                </div>
             </div>
         );
     }

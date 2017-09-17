@@ -12,13 +12,15 @@
         <meta name="description" content="">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <link rel="shortcut icon" href="https://crm.meiqia.com/public/img/favicon.png" />
-        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
         <% if (process.env.NODE_ENV === 'production') {  %>
             <link rel="stylesheet" href="<%= global.cdnHost %>/assets/animate.min.css"></link>
+            <link rel="stylesheet" href="<%= global.cdnHost %>/assets/bootstrap.min.css"></link>
             <link rel="stylesheet" href="<%= global.cdnHost %>/assets/swiper.min.css"></link>
             <link rel="stylesheet" href="<%= global.cdnHost %>/assets/app.css?_=<%= global.fileHash %>"></link>
         <% } else { %>
             <link rel="stylesheet" href="/public/css/swiper.css">
+            <link rel="stylesheet" href="/public/css/bootstrap.css">
             <link rel="stylesheet" href="/public/css/animate.css"></link>
         <% } %>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -35,8 +37,12 @@
         window.globalApiConfig = <%- JSON.stringify(global.globalApiConfig) %>;
         </script>
         <% if (process.env.NODE_ENV === 'production') {  %>
+        <script src="<%= global.cdnHost %>/assets/jquery.min.js"></script>
+        <script src="<%= global.cdnHost %>/assets/bootstrap.min.js %>"></script>        
         <script src="<%= global.cdnHost %>/assets/swiper.min.js"></script>
         <% } else { %>
+        <script src="<%= global.cdnHost %>/public/lib/jquery.js %>"></script>
+        <script src="<%= global.cdnHost %>/public/lib/bootstrap.js %>"></script>
         <script src="<%= global.cdnHost %>/public/lib/swiper.js %>"></script>
         <% } %>
         <script src="<%= global.cdnHost %>/assets/app.bundle.js?_=<%= global.fileHash %>"></script>

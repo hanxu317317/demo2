@@ -6,6 +6,14 @@ global.globalApiConfig = apiConfig;
 // 每次重启给当前服务增加一个后缀 hash
 global.fileHash = new Date().getTime();
 
+router.get('/index', async (ctx) => {
+    await ctx.render('new', {
+        title: 'new',
+        filename: 'new'
+    });
+});
+
+
 export default {
     init: (app) => {
         app

@@ -4,10 +4,13 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <!-- <link rel="shortcut icon" href="http://crm.meiqia.com/public/img/favicon.png" /> -->
     <% if (process.env.NODE_ENV === 'production') {  %>
+    <link rel="stylesheet" href="<%= global.cdnHost %>/assets/animate.min.css"></link>
+    <link rel="stylesheet" href="<%= global.cdnHost %>/assets/swiper.min.css"></link>
     <link href="<%= global.cdnHost %>/assets/main.min.css?_=<%= global.fileHash %>" rel="stylesheet">
     <% } else { %>
     <link href="/public/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/swiper.css">
+    <link rel="stylesheet" href="/public/css/animate.css"></link>
     <% } %>
 </head>
