@@ -1,8 +1,6 @@
 export default {
-
     // cdn
-    cdnHost: 'http://localhost:8332',
+    cdnHost: 'http://127.0.0.1:8332'
 
+  
 };
-
-
