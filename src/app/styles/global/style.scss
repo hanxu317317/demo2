@@ -23,6 +23,23 @@ a {
 }
 
 :global {
+	.border-bottom {
+		border-bottom: 3px solid #ececec;
+	}
+	.border-desc__center {
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			background: #53e581;
+			width: 120px;
+			height: 4px;
+			bottom: -10px;
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
+	}
 	.show {
 		display: block;
 	}
@@ -54,7 +71,6 @@ a {
 	#swiper {
 		height: 80%;
 		opacity: 1;
-		
 		width: 100%;
 		top: 20%;
 		position: absolute;
@@ -82,19 +98,20 @@ a {
 			height: 100%;
 			transition: all 1s;
 			box-shadow: 0 0 31px 10px white;
-			background-size: auto 100%;
-			background-position-x: 50%;
-			background-position-y: 50%;
+			
+			// background-position-x: 50%;
+			// background-position-y: 50%;
 		}
 		@for $i from 0 to 6 {
 			.swiper-slide__bg$i {
-				background-image: url(/public/img/nav_$(i).jpg);
+				background: url(/public/img/nav_$(i).jpg) no-repeat center;
+				background-size: 100% auto;
 				
 			}
 			.swiper-slide-active .swiper-slide__bg {
-				background-size: auto 110%;
-				background-position-x: 50%;
-				background-position-y: 40%;
+				background-size: 110% auto;
+				// background-position-x: 50%;
+				// background-position-y: 50%;
 				
 			}
 		}
@@ -116,6 +133,8 @@ a {
 			position: relative;
 			height: 100%;
 			line-height: 1.5em;
+			padding: 12px;
+			padding-top: 30px;
 			background: #f7f8f1;
 		}
 		& .close{
@@ -142,6 +161,39 @@ a {
 			margin-top: 10px;
 		    font-size: 14px !important;
 			margin-bottom: 5;
+		}
+	}
+	.intro-part__one {
+		min-height: 400px;
+		img {
+			width: 100%;
+		}
+		.left {
+			padding-right: 12px;
+		}
+	}
+	.intro-part__two {
+		img {
+			width: 100%;
+		}
+		.left {
+			padding-right: 12px;
+		}
+		background: url(/public/img/big-bg.png) no-repeat center;
+		background-size: 100% auto;
+		min-height: 400px;
+	}
+	.intro-part__three {
+		color:white;
+		text-align: center;
+		background: url(/public/img/intro_3_1.jpg) no-repeat center;
+		min-height: 400px;
+		background-size: 100% auto;
+	}
+
+	.culture-one {
+		& img {
+			widh: 100%;
 		}
 	}
 }

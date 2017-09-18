@@ -305,7 +305,10 @@ export default class Home extends Component {
         console.log("this.rou", this.context.router);
         return (
             <div>
-                {this.renderList()}
+                <h3 className="border-desc__center" style={{textAlign:'center', marignBottom: '30px'}}>企业简介</h3>
+                <div style={{marginTop: '30px'}} className="goods-list">
+                    {this.renderList()}
+                </div>
             </div>
         );
     }
