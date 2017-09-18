@@ -1,7 +1,0 @@
-dist
-.DS_Store
-.idea
-node-mock/
-npm-debug.log
-.happypack/*
-.vscode/*
