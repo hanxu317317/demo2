@@ -44,3 +44,7 @@ span{
 #body {
 	background-color: #fafbfd;
 }
+
+.game-bg {
+	background: red;
+}

@@ -298,7 +298,6 @@ export default class Home extends Component {
             })
         })
         return result;
-        console.log("result", result)
     }
     render() {
         

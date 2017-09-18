@@ -2,7 +2,7 @@ import Koa from 'koa';
 import R from './router';
 import M from './middleware';
 
-const port = 8332;
+const port = 8333;
 const app = new Koa();
 
 M.init(app);
