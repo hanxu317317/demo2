@@ -49,8 +49,8 @@ export default class App extends Component {
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                            
-                            <div className="modal-body" style={{height: '100%', overflow: 'auto'}}>
-                            <button type="button" className="close" style={{fontSize: '60px', marginTop:'-20px'}} data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <div className="modal-body" id="modal-body" style={{height: '100%', overflow: 'auto'}}>
+                                <button type="button" className="close" style={{fontSize: '60px', marginTop:'-20px'}} data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 {this.props.children && React.cloneElement(this.props.children, this.props)}
                             </div>
                           

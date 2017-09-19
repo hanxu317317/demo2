@@ -88,7 +88,7 @@ export default class HeadSwiper extends Component {
         for (let i = 0; i < INFO.length; i++) {
             Components.push(
                 <div key={i} className="swiper-slide" onClick={this.jump.bind(this, i)}>
-                    <div className={`swiper-slide__bg swiper-slide__bg${INFO[i].index} `} />
+                    <div id={`swiper-slide__bg${INFO[i].index}`} className={`swiper-slide__bg swiper-slide__bg${INFO[i].index} `} />
                     <div className="content">
                         <p className="ani" id={`content_${i}`}>
                             &nbsp;
