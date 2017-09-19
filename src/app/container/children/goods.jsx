@@ -300,14 +300,14 @@ export default class Home extends Component {
         return result;
     }
     render() {
-        
+        // <h3 className="border-desc__center" style={{textAlign:'center', marignBottom: '30px'}}>企业简介</h3>
+        // <div style={{marginTop: '30px'}} className="goods-list">
+        //     {this.renderList()}
+        // </div>
         console.log("this.rou", this.context.router);
         return (
-            <div>
-                <h3 className="border-desc__center" style={{textAlign:'center', marignBottom: '30px'}}>企业简介</h3>
-                <div style={{marginTop: '30px'}} className="goods-list">
-                    {this.renderList()}
-                </div>
+            <div className="goods-wrap" style={{height: '100%'}}>
+               <img src="/public/img/goods/modal1.jpg" style={{width: '100%', height: '100%'}}/> 
             </div>
         );
     }
