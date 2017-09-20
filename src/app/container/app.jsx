@@ -13,7 +13,7 @@ export default class App extends Component {
     constructor() {
         super();
     }
-
+    
     componentDidMount() {
         var galleryTop = new Swiper('#gallery-top', {
             nextButton: '.swiper-button-next',
@@ -24,6 +24,13 @@ export default class App extends Component {
         let container = document.getElementById('container');
         let clientHeight = document.body.clientHeight;
         container.style.height = clientHeight + 'px';
+
+
+        window.addEventListener('resize', _.debounce(() => {
+            let container1 = document.getElementById('container');
+            let clientHeight1 = document.body.clientHeight;
+            container.style.height = clientHeight1 + 'px';
+        }, 300));
         // main.style.paddingTop = swiper.offsetHeight + 'px';
     }
 

@@ -13,7 +13,7 @@ const INFO = [
         href: 'culture'
     },
     {
-        title: '市场员工',
+        title: '企业人才',
         index: '6',
         href: 'member'
     },
@@ -23,7 +23,7 @@ const INFO = [
         href: 'market'
     },
     {
-        title: '董事致辞',
+        title: '董事长致辞',
         index: '5',
         href: 'ceo'
 

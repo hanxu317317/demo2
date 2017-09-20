@@ -69,13 +69,13 @@ a {
 		box-shadow: 0px 7px 3px -4px white;
 	}
 	#swiper {
-		height: 80%;
+		height: 356px;
 		opacity: 1;
 		width: 100%;
-		top: 25%;
+		top: 45%;
 		position: absolute;
-		padding-bottom: 15%;
-		padding-top: 5%;
+		// padding-bottom: 15%;
+		// padding-top: 5%;
 		left: 0;
 		.swiper-slide  {
 			position: relative;
@@ -124,7 +124,12 @@ a {
 				
 			}
 		}
-
+		.swiper-slide__bg2  {
+			background-size: 100% 100%;
+		}
+		.swiper-slide-active .swiper-slide__bg2 {
+			background-size: 110% 100%;
+		}
 	}
 	#modal-top {
 		& .modal-dialog  {
@@ -197,6 +202,33 @@ a {
 			line-height: 1.5 !important;
 			margin-top: 0 !important;
 			// margin:  !important;
+		}
+	}
+	.goods-wrap {
+		background: url(/public/img/goods/modal1.jpg) no-repeat;
+		background-size: 100% 100%;
+		:global {
+			.flex-item-5 {
+				margin: 15px 0 0px 0; 
+			}
+		}
+		&__img {
+			width: 100%;
+			& img {
+				width: 100%;
+			}
+		}
+		&__right {
+			width: 52%;
+			height: 100%;
+			overflow: auto;
+			margin-left: 48%;
+		}
+		& p {
+			text-align: center;
+			font-size: 14px !important;
+			margin: 0 !important;
+			margin-top: 15px !important;
 		}
 	}
 }
