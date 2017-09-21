@@ -14,7 +14,7 @@ const INFO = [
     },
     {
         title: '企业人才',
-        index: '6',
+        index: '3',
         href: 'member'
     },
     {
@@ -30,7 +30,7 @@ const INFO = [
     },
     {
         title: '产品展示 ',
-        index: '3',
+        index: '6',
         href: 'goods'
     }
 ];
@@ -45,12 +45,13 @@ export default class HeadSwiper extends Component {
     
     componentDidMount() {
         var mySwiper = new Swiper('#swiper', {
-            effect: 'coverflow',
+            // effect: 'coverflow',
             nextButton: '.swiper-button-next',
             prevButton: '.swiper-button-prev',
             initialSlide: 2,
             slidesPerView: 3,
             loop: false,
+            spaceBetween: 50,
             centeredSlides: true,
             coverflow: {
                 rotate: -10,
