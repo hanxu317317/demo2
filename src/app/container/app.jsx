@@ -15,22 +15,17 @@ export default class App extends Component {
     }
     
     componentDidMount() {
-        var galleryTop = new Swiper('#gallery-top', {
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            effect : 'cube',
-            spaceBetween: 10,
-        });
+    
         let container = document.getElementById('container');
         let clientHeight = document.body.clientHeight;
         container.style.height = clientHeight + 'px';
 
 
-        window.addEventListener('resize', _.debounce(() => {
-            let container1 = document.getElementById('container');
-            let clientHeight1 = document.body.clientHeight;
-            container.style.height = clientHeight1 + 'px';
-        }, 300));
+        // window.addEventListener('resize', _.debounce(() => {
+        //     let container1 = document.getElementById('container');
+        //     let clientHeight1 = document.body.clientHeight;
+        //     container.style.height = clientHeight1 + 'px';
+        // }, 300));
         // main.style.paddingTop = swiper.offsetHeight + 'px';
     }
 
