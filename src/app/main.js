@@ -14,18 +14,6 @@ import initStore from './redux/init';
         return <Component {...props} />;
     };
 
-    let docElm = document.documentElement;
- 
-    if (docElm.requestFullscreen) {  
-        docElm.requestFullscreen();
-    } else if (docElm.mozRequestFullScreen) {  
-        docElm.mozRequestFullScreen();
-    } else if (docElm.webkitRequestFullScreen) {  
-        docElm.webkitRequestFullScreen();
-    } else if (docElm.msRequestFullscreen) {
-        docElm.msRequestFullscreen();
-    }
-
 
     ReactDOM.render(
         <Router

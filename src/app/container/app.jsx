@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import Swiper from './home/swiper';
 import LeftNav from './home/left-nav';
 require('styles/global/style.scss');
@@ -13,20 +14,15 @@ export default class App extends Component {
     constructor() {
         super();
     }
-    
     componentDidMount() {
-    
+
         let container = document.getElementById('container');
         let clientHeight = document.body.clientHeight;
         container.style.height = clientHeight + 'px';
-
-
-        // window.addEventListener('resize', _.debounce(() => {
-        //     let container1 = document.getElementById('container');
-        //     let clientHeight1 = document.body.clientHeight;
-        //     container.style.height = clientHeight1 + 'px';
-        // }, 300));
-        // main.style.paddingTop = swiper.offsetHeight + 'px';
+        window.addEventListener('resize', _.debounce(() => {
+            let container = document.getElementById('container');
+            let clientHeight = document.body.clientHeight;
+        }, 300));
     }
 
     componentDidUpdate() {

@@ -33,6 +33,9 @@
           你的浏览器太过时了，推荐你去这里<a href="http://browsehappy.com/">升级</a>浏览器。
         </div>
         <![endif]-->
+        <button id="fullScreen" onclick="fullScreen()">
+            全屏
+        </button>
         <div id="App">
         </div>
         <script>
@@ -48,5 +51,22 @@
         <script src="<%= global.cdnHost %>/public/lib/swiper.js %>"></script>
         <% } %>
         <script src="<%= global.cdnHost %>/assets/app.bundle.js?_=<%= global.fileHash %>"></script>
+        <script type="text/javascript">
+                function fullScreen() {
+                    var fullScreenButton = $("#fullScreen");
+                        fullScreenButton.hide();
+                    var docElm = document.documentElement;
+                    docElm.webkitRequestFullScreen();
+                    if (docElm.requestFullscreen) {  
+                        docElm.requestFullscreen();
+                    } else if (docElm.mozRequestFullScreen) {  
+                        docElm.mozRequestFullScreen();
+                    } else if (docElm.webkitRequestFullScreen) {  
+                        docElm.webkitRequestFullScreen();
+                    } else if (docElm.msRequestFullscreen) {
+                        docElm.msRequestFullscreen();
+                    }
+                }
+            </script>
     </body>
 </html>
