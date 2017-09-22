@@ -103,7 +103,7 @@ a {
 			border-radius: 15px;
 			height: 100%;
 			transition: all 1s;
-			box-shadow: 0 0 31px 10px white;
+			// box-shadow: 0 0 31px 10px white;
 		
 			// background-position-x: 50%;
 			// background-position-y: 50%;
@@ -115,13 +115,6 @@ a {
 			.swiper-slide__bg$i {
 				background: url(/public/img/nav_$(i).jpg) no-repeat center;
 				background-size: 100% auto;
-				
-			}
-			.swiper-slide-active .swiper-slide__bg {
-				background-size: 110% auto;
-				// background-position-x: 50%;
-				// background-position-y: 50%;
-				
 			}
 		}
 		.swiper-slide__bg2  {
