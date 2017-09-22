@@ -114,12 +114,12 @@ a {
 		@for $i from 0 to 6 {
 			.swiper-slide__bg$i {
 				background: url(/public/img/nav_$(i).jpg) no-repeat center;
-				background-size: 100% auto;
+				background-size: 100% 100%;
 			}
 		}
-		.swiper-slide__bg2  {
-			background-size: 100% 100%;
-		}	
+		// .swiper-slide__bg2  {
+		// 	background-size: 100% 100%;
+		// }	
 	}
 	#modal-top {
 		& .modal-dialog  {
