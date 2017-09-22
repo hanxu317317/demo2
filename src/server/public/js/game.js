@@ -95,4 +95,36 @@ function guide(){
         goToStep(currentStep++);  
     });  
     }  
-}  
+}
+
+
+// 初始化首页
+var index = 0;
+var index_title_interval;
+function initIndex() {
+    var word = '泡椒凤爪是一项精深的食材工艺, 让我们去和"友哥"一起学习精制吧!';
+    $("#index .title").html('');
+    index = 0;
+    function showSelecRoleTitle() {
+        setTimeout(function() {
+            $("#index .select_sex").removeClass("hide");
+        }, 500);
+    }
+    function showTwoRole() {
+        setTimeout(function() {
+            $(".role").removeClass("hide")
+        }, 1500);
+    }
+    function oneByoneWord(){
+        $("#index .title").html(word.substring(0, index++));
+        if (index > word.length) {
+            clearInterval(index_title_interval);
+            // 出现选择人物角色的文字
+            showSelecRoleTitle();
+            showTwoRole();
+        }
+    }
+    index_title_interval = setInterval(oneByoneWord, 10);
+}
+
+

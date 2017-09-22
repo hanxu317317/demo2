@@ -7,9 +7,9 @@ global.globalApiConfig = apiConfig;
 global.fileHash = new Date().getTime();
 
 router.get('/game', async (ctx) => {
-    await ctx.render('new', {
-        title: 'new',
-        filename: 'new'
+    await ctx.render('game', {
+        title: 'game',
+        filename: 'game'
     });
 });
 

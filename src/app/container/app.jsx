@@ -43,7 +43,7 @@ export default class App extends Component {
                     <div className="content slideInLeft animated">THIS is TITle</div>
                 </div>
                 <Swiper />
-                <div className="modal fade" id="modal-top" tabindex="-1" role="dialog">
+                <div className="modal fade" id="modal-top" role="dialog">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
                            

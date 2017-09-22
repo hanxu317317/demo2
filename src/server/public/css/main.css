@@ -44,8 +44,73 @@ span{
 #body {
 	background-color: #fafbfd;
 }
-
-.game-bg {
-	background: red;
+.hide{
+	display: none !important;
 }
-
+.show {
+	display: block !important;
+}
+.game-bg {
+	background: url(/public/img/game/bg.jpg) no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+#index  {
+	color: #2dc500;
+	font-size: 40px;
+	text-align: center
+}
+#index .title {
+	
+	text-shadow: 5px 5px 5px white;
+	margin-top: 30px;
+	text-align: center
+}
+#index .select_sex {
+	margin-top: 30px;
+	text-align: center;
+	text-shadow: 5px 5px 5px white;
+}
+#index .role {
+	height: 480px;
+	width: 370px;
+	top: 40%;
+	transform: translate(478px, -104px) scale(1.2);
+	transition: all 1500ms;
+	position: absolute;
+	background: url(/public/img/game/roles.png) no-repeat;
+	background-repeat: no-repeat;
+}
+#index .role .name {
+	position: absolute;
+	bottom: -50px;
+	left: 0;
+	right: 0;
+	color: blue;
+	text-shadow: 5px 5px 5px white;
+}
+#index .role.girl{
+	left: 15%;
+}
+#index .role.active.boy{
+	top: 30%;
+	right: 39%;
+	transform: scale(1.2);
+}
+#index .role.active.girl{
+	top: 30%;
+	left: 42%;
+	transform: scale(1.2);
+}
+#index .role.boy {
+	height: 490px;
+	right: 15%;
+	top: 37%;
+	background: url(/public/img/game/roles.png) no-repeat;
+	background-repeat: no-repeat;
+	background-position-x:  -401px;
+}
