@@ -26,6 +26,9 @@ export default class App extends Component {
     }
 
     componentDidUpdate() {
+        $("#closeButton").mouseover(function(){
+            $("#modal-top").modal('hide')
+        });
     }
 //     <section id="main">
 //     <div className="left">
@@ -48,7 +51,7 @@ export default class App extends Component {
                         <div className="modal-content">
                            
                             <div className="modal-body" id="modal-body" style={{height: '100%', overflow: 'auto'}}>
-                                <button type="button" className="close" style={{fontSize: '60px', marginTop:'-20px'}} data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <button type="button" className="close" id="closeButton" style={{fontSize: '60px', marginTop:'-20px'}}><span aria-hidden="true">&times;</span></button>
                                 {this.props.children && React.cloneElement(this.props.children, this.props)}
                             </div>
                           

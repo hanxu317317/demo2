@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-
+import _ from 'lodash';
 const INFO = [
     {
         title: '企业简介',
@@ -41,6 +41,7 @@ export default class HeadSwiper extends Component {
 
     constructor() {
         super();
+        this.isClick = false;
     }
     
     componentDidMount() {
@@ -50,7 +51,7 @@ export default class HeadSwiper extends Component {
             // prevButton: '.swiper-button-prev',
             initialSlide: 2,
             slidesPerView: 3,
-            // touchMoveStopPropagation: false,
+            touchMoveStopPropagation: false,
             // loop: false,
             spaceBetween: 50,
             // centeredSlides: true,
@@ -81,20 +82,41 @@ export default class HeadSwiper extends Component {
     }
     jump(index) {
         browserHistory.push(`/${INFO[index].href}`);
-        $('.modal-body').eq(0).get(0).scrollTop = 0;
+        // $('.modal-body').eq(0).get(0).scrollTop = 0;
         $("#modal-top").modal();
+    }
+    cancleJump() {
+
     }
     changeBgPos(index) {
         let container = document.getElementById("container");
         let percent = index / 6 * 100 + '%';
         container.style.backgroundPositionX = percent;
     }
+    touchStart(e) {
+        this.isClick = true;
+    }
+    touchMove() {
+        this.isClick = false;
+    }
+    touchEnd(index) {
+        if (this.isClick) {
+            browserHistory.push(`/${INFO[index].href}`);
+            $('.modal-body').eq(0).get(0).scrollTop = 0;
+            $("#modal-top").modal();
+            this.isClick = false;
+        }
+    }
+
     //  <img className="swiper-slide__image" src={`/public/img/nav_${i}.jpg`} />
     renderNav() {
         let Components = [];     
         for (let i = 0; i < INFO.length; i++) {
             Components.push(
-                <div key={i} className="swiper-slide" onClick={this.jump.bind(this, i)}>
+                <div key={i} className="swiper-slide"
+                    onTouchStart={this.touchStart.bind(this)}
+                    onTouchMove={this.touchMove.bind(this)}
+                    onTouchEnd={this.touchEnd.bind(this, i)}>
                     <div className="inner hack">
                         <dl>
                             <dt> 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</dt>
