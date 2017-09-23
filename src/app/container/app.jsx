@@ -29,15 +29,13 @@ export default class App extends Component {
         $("#closeButton").mouseover(function(){
             $("#modal-top").modal('hide')
         });
+
+        $("#closeButton").click(function(){
+            $("#modal-top").modal('hide')
+        });
+
     }
-//     <section id="main">
-//     <div className="left">
-//         <LeftNav />
-//     </div>
-//     <div className="right">
-//         {this.props.children && React.cloneElement(this.props.children, this.props)}
-//     </div>
-// </section>
+
     render() {
 
         return (
