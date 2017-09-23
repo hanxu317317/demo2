@@ -46,29 +46,35 @@ export default class HeadSwiper extends Component {
     componentDidMount() {
         var mySwiper = new Swiper('#swiper', {
             // effect: 'coverflow',
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
+            // nextButton: '.swiper-button-next',
+            // prevButton: '.swiper-button-prev',
             initialSlide: 2,
             slidesPerView: 3,
-            loop: false,
+            // touchMoveStopPropagation: false,
+            // loop: false,
             spaceBetween: 50,
-            centeredSlides: true,
-            coverflow: {
-                rotate: -10,
-                stretch: -40,
-                depth: 60,
-                modifier: 2,
-                slideShadows: true
-            },
+            // centeredSlides: true,
+            // coverflow: {
+            //     rotate: -10,
+            //     stretch: -40,
+            //     depth: 60,
+            //     modifier: 2,
+            //     slideShadows: true
+            // },
             onSlideChangeEnd: (swiper) => {
-                this.changeBgPos(swiper.activeIndex);
-                let index = swiper.activeIndex + 1;
-                $("#title .content").fadeOut();
-                setTimeout(() => {
-                    $("#title .content").html(INFO[swiper.activeIndex].title).fadeIn();
-                }, 300)
+                // this.changeBgPos(swiper.activeIndex);
+                // let index = swiper.activeIndex + 1;
+                // $("#title .content").fadeOut();
+                // setTimeout(() => {
+                //     $("#title .content").html(INFO[swiper.activeIndex].title).fadeIn();
+                // }, 300)
 
-            }
+            },
+            // slidesPerView: 3,
+            grabCursor : true,
+            nextButton: '.arrow-right',
+            prevButton: '.arrow-left',
+            parallax:true,
         });
         $("#title").fadeIn();        
        
@@ -89,12 +95,39 @@ export default class HeadSwiper extends Component {
         for (let i = 0; i < INFO.length; i++) {
             Components.push(
                 <div key={i} className="swiper-slide" onClick={this.jump.bind(this, i)}>
-                    <div id={`swiper-slide__bg${INFO[i].index}`} className={`swiper-slide__bg swiper-slide__bg${INFO[i].index} `} />
-                    <div className="content">
-                        <p className="ani" id={`content_${i}`}>
-                            &nbsp;
-                            {INFO[i].title}
-                        </p>
+                    <div className="inner hack">
+                        <dl>
+                            <dt> 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</dt>
+                            <dd> 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                            <dd> 11111111111111111111111111111111111111111111111111111111111111111111111...</dd>
+                           
+                        </dl>
+                    </div>
+                    <div className="inner" style={{width: '100%', height: '100%'}}>
+                        <div id={`swiper-slide__bg${INFO[i].index}`} className={`swiper-slide__bg swiper-slide__bg${INFO[i].index} `} />
+                        <div className="content">
+                            <p className="ani" id={`content_${i}`}>
+                                &nbsp;
+                                {INFO[i].title}
+                            </p>
+                        </div>
                     </div>
                 </div>
             );

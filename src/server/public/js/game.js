@@ -1,3 +1,16 @@
+var chatLog = [
+    '欢迎来到有友小厨房。泡凤爪是起源于川渝地区的特色美食，今天我们就来体验一下如何制作这道美味的家常菜',
+    '哇！好期待',
+    '我们要挑选大个凤爪，洗净，从中间剁开，放入沸水锅中煮10-15分钟，随后捞出、冷却。',
+    '好的，然后呢？',
+    '接下来，将准备好的蒜和小米辣剁碎，倒入盛满开水的宽口容器中，冷却。',
+    '明白了，这些是调味用的吧？',
+    '对。下一步呢，是将老坛泡菜水与冷开水充分混合，然后加入花椒、胡椒粉、小米辣及味精少许',
+    '原来做一坛泡凤爪要这么多步骤啊',
+    '急，还有最后一步。现在，我们只要将之前煮好的凤爪倒入冷却后的泡菜水中，浸泡24小时就完成了',
+    '谢谢坛小厨！听了您的讲解，我的口水都快掉下来了。我要亲手试做一下泡凤爪'
+];
+
 // 记录当前步数的变量  
 var currentStep = 1;  
 // 存储音频的数组  
@@ -108,13 +121,15 @@ function initIndex() {
     function showSelecRoleTitle() {
         setTimeout(function() {
             $("#index .select_sex").removeClass("hide");
-        }, 500);
+        }, 100);
     }
+
     function showTwoRole() {
         setTimeout(function() {
             $(".role").removeClass("hide")
-        }, 1500);
+        }, 100);
     }
+
     function oneByoneWord(){
         $("#index .title").html(word.substring(0, index++));
         if (index > word.length) {
@@ -127,4 +142,19 @@ function initIndex() {
     index_title_interval = setInterval(oneByoneWord, 10);
 }
 
+function initChat() {
+    $("#intro").removeClass("hide");
+    $(".chushi-wrap").removeClass("hide");
+    $(".role-wrap").removeClass("hide");
+    
+}
+function removeIndex() {
+    $(".role_girl").addClass("fadeOutLeft");
+    $(".role_boy").addClass("fadeOutRight");
+    $(".index-head").addClass("fadeOutUp");
+    $("#start-game").removeClass("hide fadeInUp").addClass("fadeOutDown");
+    setTimeout(function() {
+        $("#index").addClass("hide");
+    }, 600)
+}
 

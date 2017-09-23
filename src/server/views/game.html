@@ -1,14 +1,43 @@
 <div class="game-bg">
     <div id="index">
-        <div class="title"></div>
-        <div class="hide select_sex rotateIn animated">点击人物选择我的角色</div>
+        <div class="index-head animated">
+            <div class="title"></div>
+            <div class="hide select_sex rotateIn animated">点击人物选择我的角色</div>
+        </div>
         <div class="select_role">
-            <div class="role girl animated hide fadeInLeft">
+            <div class="role animated hide fadeInLeft role_girl">
+                <div class="girl avatar" data-role="0">
+                    <img src="/public/img/game/girl.png" />
+                </div>
                 <p class="name">我是友妹</p>
             </div>
-            <div class="role boy animated hide fadeInRight">
+            <div class="role animated hide fadeInRight role_boy">
+                <div class="boy avatar" data-role="1">
+                    <img src="/public/img/game/boy.png" />
+                </div>
                 <p class="name">我是友哥</p>
-                
+            </div>
+        </div>
+        <div id="start-game" class="start-game animated hide">
+            开始游戏
+        </div>
+    </div>
+    <div id="intro" class="hide">
+        <div class="chushi-wrap hide  animated  fadeInLeft">
+            <div class="">
+                <img class="chushi" src="/public/img/game/chushi.png" />
+            </div>
+            <div class="chat chat-left hide" id="chatLeft">
+                123131231232321
+            </div>
+            
+        </div>
+        <div class="role-wrap animated hide fadeInRight">
+            <div class="">
+                <img class="role" src="/public/img/game/girl.png" />
+            </div>
+            <div class="chat chat-right hide" id="chatRight">
+                123131231232321
             </div>
         </div>
     </div>

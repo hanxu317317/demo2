@@ -40,7 +40,7 @@ export default class App extends Component {
         return (
             <div id="container">
                 <div id="title">
-                    <div className="content slideInLeft animated">THIS is TITle</div>
+                    <div id="title-name" className="content slideInLeft animated">品味有友 分享快乐</div>
                 </div>
                 <Swiper />
                 <div className="modal fade" id="modal-top" role="dialog">
