@@ -1,120 +1,9 @@
-var chatLog = [
-    '欢迎来到有友小厨房。泡凤爪是起源于川渝地区的特色美食，今天我们就来体验一下如何制作这道美味的家常菜',
-    '哇！好期待',
-    '我们要挑选大个凤爪，洗净，从中间剁开，放入沸水锅中煮10-15分钟，随后捞出、冷却。',
-    '好的，然后呢？',
-    '接下来，将准备好的蒜和小米辣剁碎，倒入盛满开水的宽口容器中，冷却。',
-    '明白了，这些是调味用的吧？',
-    '对。下一步呢，是将老坛泡菜水与冷开水充分混合，然后加入花椒、胡椒粉、小米辣及味精少许',
-    '原来做一坛泡凤爪要这么多步骤啊',
-    '急，还有最后一步。现在，我们只要将之前煮好的凤爪倒入冷却后的泡菜水中，浸泡24小时就完成了',
-    '谢谢坛小厨！听了您的讲解，我的口水都快掉下来了。我要亲手试做一下泡凤爪'
-];
-
-// 记录当前步数的变量  
-var currentStep = 1;  
-// 存储音频的数组  
-var myMedia = [];  
-// 音频来源地址数组  
-var music = ['./assets/audios/1.mp3',  
-    './assets/audios/2.mp3',  
-    './assets/audios/3.mp3',  
-    './assets/audios/4.mp3',  
-    './assets/audios/5.mp3',  
-    './assets/audios/6.mp3',  
-    './assets/audios/7.mp3',  
-    './assets/audios/8.mp3',  
-    './assets/audios/9.mp3',  
-    './assets/audios/10.mp3',  
-    './assets/audios/11.mp3'  
-];  
-//对话框内容文本  
-var text = [ 
-    '欢迎来到铜钿来哉，从此刻起，财富人生，由你自己把握。',  
-    '在以后的日子里，我将始终伴随您左右。',  
-    '不要紧张，请先放松心态，跟我一起来了解一下这个世界。',  
-    '您的个人信息显示在左上角，以后可以点选头像的位置，进入个人信息页面更改、查看您的信息。',//4  
-    '而在右上角，则标注着您的战绩和金钱，而我们的目的也正是不断的使这两个数值变高，我坚信您在日后会成为一方巨富名震八方。',  
-    '在右方，是三个非常非常重要的按钮，点选“战绩排行”可以直观的查看您的成就，您的财富和排名可以在此处炫耀向世界各处。',//6  
-    '模拟交易”按钮也正是整个游戏的核心，我们在这里进行贵金属交易，以您的才智，不消数日一定就能赚取到巨额的财富。',  
-    '如果您对交易规则还不熟悉的话，选择“名师讲解”补充一下交易知识是再好不过的选择了。',//8  
-    '左下角还有一些辅助性质的小按钮~坚持每天签到，也能积累起不错的资本。而在遭遇窘境的时候，您则可以玩一下小游戏放松身心，说不定还会有意外收获~',  
-    '人际交往自然也是必不可少的部分，在左侧的好友侧边栏可以查看、添加您的好友，尽快建立起您的人际圈吧~！',//10  
-    '好~！多说无益，我们现在就来体验一下交易流程好了，看着我的眼睛，我知道，您可以的……这就打开模拟交易开始吧！'  
-];
-
-// 箭头的位置属性和图片地址  
-var arrow = [  
-    { 'x': 900, 'y': 0, 'img': '' }, // 1  
-    { 'x': 900, 'y': 150, 'img': '' }, // 2  
-    { 'x': 900, 'y': 300, 'img': '' }, // 3  
-    { 'x': 41, 'y': 0, 'img': 'assets/images/arrow_up.png' }, // 4  
-    { 'x': 960, 'y': -30, 'img': 'assets/images/arrow_up.png' }, // 5  
-    { 'x': 860, 'y': 82, 'img': 'assets/images/arrow_right.png' }, // 6  
-    { 'x': 860, 'y': 230, 'img': 'assets/images/arrow_right.png' }, // 7  
-    { 'x': 860, 'y': 420, 'img': 'assets/images/arrow_right.png' }, // 8  
-    { 'x': 250, 'y': 300, 'img': 'assets/images/arrow_down.png' }, // 9  
-    { 'x': 50, 'y': 300, 'img': 'assets/images/arrow_left.png' }, // 10  
-    { 'x': 860, 'y': 230, 'img': 'assets/images/arrow_right.png' } // 11  
-]  
-  
-//播放和停止音乐  
-function playMuisc(Media) {  
-    Media.play();  
-}  
-function pauseMuisc(Media) {  
-    Media.pause();  
-}  
-//初始化向导，加载音频  
-function initGuide() {  
-    for (var i = 0; i < 11; i++)  
-        myMedia.push(new Audio(music[i]));  
-    $("#bt_guide_next").css("cursor","pointer");  
-}  
-//进行某一步的函数  
-function goToStep(currentStep) {  
-    if (currentStep > 10) return false;  
-    if ((currentStep - 1) >= 0)  
-        pauseMuisc(myMedia[currentStep - 1]);  
-    playMuisc(myMedia[currentStep]);  
-    showDialog(text[currentStep]);  
-    showArrow(arrow[currentStep]);  
-    return true;  
-}  
-//显示对话框  
-function showDialog(text) {  
-    $("#lb_guide_text").html(text);  
-}  
-//显示箭头  
-function showArrow(arrow) {  
-    if(arrow.img!="")  
-            $("#div_guide_arrow").html("<img src='" + arrow.img + "'></img>");  
-    else  $("#div_guide_arrow").html("");  
-    $("#div_guide_arrow").css("left", arrow.x + "px");  
-    $("#div_guide_arrow").css("top", arrow.y + "px");  
-}  
-//引导主函数  
-function guide(){  
-    $("#div_guide_dialog").hide();  
-    if(GetQueryString("guide")=="true"){  
-         $("#div_guide_dialog").show(500);  
-         setTimeout(goToStep(0),500);  
-     $("#bt_guide_next").click(function () {  
-        if (currentStep >= 11) {  
-        $("#div_guide_dialog").hide(500);  
-        $("#div_guide_arrow").hide(100);  
-        return false;  
-    }  
-        goToStep(currentStep++);  
-    });  
-    }  
-}
-
 
 // 初始化首页
 var index = 0;
 var index_title_interval;
 function initIndex() {
+    $("#index").removeClass("hide");
     var word = '泡椒凤爪是一项精深的食材工艺, 让我们去和"友哥"一起学习精制吧!';
     $("#index .title").html('');
     index = 0;
@@ -139,7 +28,7 @@ function initIndex() {
             showTwoRole();
         }
     }
-    index_title_interval = setInterval(oneByoneWord, 10);
+    index_title_interval = setInterval(oneByoneWord, 100);
 }
 
 function initChat() {
@@ -155,6 +44,377 @@ function removeIndex() {
     $("#start-game").removeClass("hide fadeInUp").addClass("fadeOutDown");
     setTimeout(function() {
         $("#index").addClass("hide");
-    }, 600)
+    }, 600);
+    setTimeout(function() {
+       chatGuild();
+    }, 2000)
 }
 
+function removeChat() {
+    $(".chushi-wrap").removeClass("fadeInLeft").addClass("fadeOutLeft");
+    $("#chatRight").removeClass('fadeIn').addClass("fadeOut");
+    $(".role-wrap").removeClass('fadeInRight').addClass("fadeOutRight");
+    $("#start-question").removeClass("hide fadeInUp").addClass("fadeOutDown");
+    setTimeout(function() {
+    $("#intro").addClass("hide");
+    }, 500)
+}
+
+
+var chatIndex = 0;
+var wordIndex = 0;
+var wordSpeed = 100; // 说话的速度 
+var times = 2000; // 每句话的间隔
+var wordInterval = null;
+// 奇数是厨师.偶数角色
+var chatLog = [
+'1',
+    // '欢迎来到有友小厨房。泡凤爪是起源于川渝地区的特色美食，今天我们就来体验一下如何制作这道美味的家常菜',
+    '哇！好期待',
+    '我们要挑选大个凤爪，洗净，从中间剁开，放入沸水锅中煮10-15分钟，随后捞出、冷却。',
+    '好的，然后呢？',
+    '接下来，将准备好的蒜和小米辣剁碎，倒入盛满开水的宽口容器中，冷却。',
+    '明白了，这些是调味用的吧？',
+    '对。下一步呢，是将老坛泡菜水与冷开水充分混合，然后加入花椒、胡椒粉、小米辣及味精少许',
+    '原来做一坛泡凤爪要这么多步骤啊',
+    '急，还有最后一步。现在，我们只要将之前煮好的凤爪倒入冷却后的泡菜水中，浸泡24小时就完成了',
+    '谢谢坛小厨！听了您的讲解，我的口水都快掉下来了。我要亲手试做一下泡凤爪'
+];
+
+function chushiChat() {
+    $("#chatLeft").removeClass("hide");
+    $("#chatRight").addClass("hide");
+    wordIndex = 0;
+    var words = chatLog[chatIndex];
+
+    function oneByOne(){
+        $("#chatLeft").html(words.substring(0, wordIndex++));
+        if (wordIndex > words.length) {
+            clearInterval(wordInterval);
+            // 出现选择人物角色的文字
+            chatIndex++;
+            if (chatIndex < chatLog.length) {
+                setTimeout(function() {
+                    $("#chatLeft").html('');
+                    roleChat();
+                }, times)
+            }
+        }
+    }
+    wordInterval = setInterval(oneByOne, wordSpeed);
+
+    // chushiChat(index + 1);
+}
+function roleChat() {
+    $("#chatLeft").addClass("hide");
+    $("#chatRight").removeClass("hide");
+    wordIndex = 0;
+    var words = chatLog[chatIndex];
+
+    function oneByOne(){
+        console.log("wordIndex", wordIndex);
+        $("#chatRight").html(words.substring(0, 1+wordIndex++));
+        if (wordIndex >= words.length) {
+            clearInterval(wordInterval);
+            // 出现选择人物角色的文字
+            chatIndex++;
+            if (chatIndex < chatLog.length) {
+                setTimeout(function() {
+                    chushiChat();
+                    $("#chatRight").html('')
+                }, times);
+            } else {
+                $("#start-question").removeClass("hide");
+            }
+        }
+    }
+    wordInterval = setInterval(oneByOne, wordSpeed);
+}
+function chatGuild() {
+    chushiChat(chatIndex);
+}
+
+
+
+
+var questions = [
+    {   
+        title: '第一题, 泡椒的选择是以下哪一种(单选)',
+        grade: 25,
+        selects: [
+            {
+                title: '小米辣',
+                src: 'xiaomijiao'
+            },
+            {
+                title: '牛角椒',
+                src: 'niujiaojiao'
+            },
+            {
+                title: '灯笼椒',
+                src: 'denglongjiao'
+            },
+            {
+                title: '二椒条',
+                src: 'erjiaotiao'
+            },
+            {
+                title: '朝天椒',
+                src: 'chaotianjiao'
+            }
+        ],
+        right: ['小米辣'],
+    }, {
+        title: '第二题, 制作泡椒需要哪些材料呢?(多选)',
+        grade: 3,
+        selects: [
+            {
+                title: '葱',
+                src: 'cong'
+            },
+            {
+                title: '姜',
+                src: 'jiang'
+            },
+            {
+                title: '蒜',
+                src: 'suan'
+            },
+            {
+                title: '洋葱',
+                src: 'yangcong'
+            },
+            {
+                title: '番茄酱',
+                src: 'fanqiejiang'
+            },
+            {
+                title: '料酒',
+                src: 'liaojiu'
+            },
+            {
+                title: '白砂糖',
+                src: 'bashatang'
+            },
+            {
+                title: '盐',
+                src: 'yan'
+            },
+            {
+                title: '酱油',
+                src: 'liaojiu'
+            },
+            {
+                title: '花椒',
+                src: 'huajiao'
+            },
+            {
+                title: '胡椒',
+                src: 'hujiao'
+            },
+            {
+                title: '甘草',
+                src: 'gancao'
+            },
+            {
+                title: '八角',
+                src: 'bajiao'
+            },
+            {
+                title: '三奈',
+                src: 'sannai'
+            },
+            {
+                title: '味精',
+                src: 'weijing'
+            },
+            {
+                title: '小茴香',
+                src: 'xiaohuixiang'
+            }
+        ],
+        right: ['姜', '蒜', '料酒', '白砂糖', '盐', '花椒','胡椒', '味精'],
+    }, {
+        title: '第三题, 盛装凤爪的老坛需要哪种水?(单选)',
+        grade: 13,
+        selects: [
+            {
+                title: '沸水',
+                src: 'feishui'
+            },
+            {
+                title: '凉开水',
+                src: 'shui'
+            },
+            {
+                title: '泡菜水',
+                src: 'paocaishui'
+            },
+            {
+                title: '淘米水',
+                src: 'taomishui'
+            },
+        ],
+        right: ['凉开水', '泡菜水']
+    },
+    {
+        title: '第四题, 煮好的凤爪倒入冷却后的泡菜水,需要浸泡多久(单选)',
+        grade: 25,
+        selects: [
+            {
+                title: '30分钟',
+                src: 'time0'
+            },
+            {
+                title: '24小时',
+                src: 'time1'
+            },
+            {
+                title: '3天',
+                src: 'time2'
+            },
+            {
+                title: '15天',
+                src: 'time3'
+            },
+        ],
+        right: ['24小时']
+    }
+]
+
+var questionIndex = 0;  // 题目的编号
+var questionsTitleInterval = null;
+var questionTitleIndex = null; // 题目的index
+var grade = 0;
+// 按几个几个的分割数组=
+// 
+function spliteNumbers(array, number) {
+    if (!array instanceof Array) {
+        return [];
+    }
+    let result = [];
+    for (let i = 0, len = array.length; i < len; i += number) {
+        result.push(array.slice(i, i+number));
+    }
+
+    return result;
+}
+
+function renderDifferentTempla(lists) {
+
+    var length = lists.length;
+    var top = 0;
+    var result = "";
+    if (length === 5) {
+        var group = [
+            [lists[0], lists[1]],
+            [lists[2]],
+            [lists[3], lists[4]]
+        ];
+        for (var i = 0; i< group.length; i++) {
+            result += '<div class="flex-column flex-between">';
+            for (var j = 0; j < group[i].length; j++) {
+                result += '<div class="flex-item-4 list-item">';
+                result += group[i][j];
+                result += "</div>";
+            }
+            result+= "</div>";
+            
+        }
+    }
+
+    if (length === 16) {
+        top = 0;
+        var group = spliteNumbers(lists, 4);
+        for (var i = 0; i< group.length; i++) {
+            result += '<div class="flex-column flex-between">';
+            for (var j = 0; j < group[i].length; j++) {
+                result += '<div class="flex-item-4 list-item">';
+                result += group[i][j];
+                result += "</div>";
+            }
+            result+= "</div>";
+            
+        }
+    }
+    if (length === 4) {
+        top = 230;
+        var group = spliteNumbers(lists, 2);
+        for (var i = 0; i< group.length; i++) {
+            result += '<div class="flex-column flex-between">';
+            for (var j = 0; j < group[i].length; j++) {
+                result += '<div class="flex-item-4 list-item">';
+                result += group[i][j];
+                result += "</div>";
+            }
+            result+= "</div>";
+            
+        }
+    }
+    var finalResult = '<div style="margin-top:'+top+'px">' + result + '</div>';
+
+
+    $("#questions_area").html(finalResult);
+}
+
+function renderQuestion() {
+
+    var list = questions[questionIndex];
+    var words = list.title;
+    function oneByOne(){
+        $(".question-title").html(words.substring(0, questionTitleIndex++));
+        if (questionTitleIndex > words.length) {
+            clearInterval(questionsTitleInterval);
+            renderList(list.selects);
+        }
+    }
+    function renderList(lists) {
+        console.log("list", lists)
+    
+        var result = [];
+        var listLength = lists.length
+        for (var i = 0; i< listLength; i++) {
+                var template = '<div class="list-wrap">' +
+                        '<img src="/public/img/game/ans/'+ lists[i].src +'.png"></img>'+
+                        '<p>'+lists[i].title+'</p>' +
+                    '</div>' +
+                    '<div class="check"></div>';
+
+            result.push(template);
+        }
+        renderDifferentTempla(result);
+    }
+    questionsTitleInterval = setInterval(oneByOne, 0);
+}
+
+function initQuestion() {
+    $("#intro .chushi-wrap").removeClass("hide")
+    // $("#intro .role-wrap").removeClass("hide")
+    $("#question").removeClass("hide");
+    $("#confirm-answer").removeClass("hide");
+    renderQuestion();
+}
+
+function initOver() {
+    var sex = 'boy';
+    var name = '有哥儿';
+    var face = 'cry';
+    var text = '';
+    if (role === 0) {
+        sex = 'girl';
+        name = '有妹儿';
+    }
+
+    if (grade >= 60) {
+        face = 'laugh';
+        text = '不错呦' + name + ', 得到了:' + grade + '分!';
+    } else {
+        text = '得了' + grade + '分,' + name + '要继续努力呦';
+    }
+    $(".over-chat").html(text);
+    $(".over-role").attr("src", '/public/img/game/' + sex + '_' + face + '.png');
+    setTimeout(function() {
+        $("#over").removeClass("hide");
+    }, 300)
+
+}

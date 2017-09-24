@@ -1,5 +1,5 @@
 <div class="game-bg">
-    <div id="index">
+    <div id="index" class="hide">
         <div class="index-head animated">
             <div class="title"></div>
             <div class="hide select_sex rotateIn animated">点击人物选择我的角色</div>
@@ -18,7 +18,7 @@
                 <p class="name">我是友哥</p>
             </div>
         </div>
-        <div id="start-game" class="start-game animated hide">
+        <div id="start-game" class="start-game animated hide fadeInUp">
             开始游戏
         </div>
     </div>
@@ -27,8 +27,8 @@
             <div class="">
                 <img class="chushi" src="/public/img/game/chushi.png" />
             </div>
-            <div class="chat chat-left hide" id="chatLeft">
-                123131231232321
+            <div class="chat chat-left hide animated  fadeIn" id="chatLeft">
+                
             </div>
             
         </div>
@@ -36,9 +36,57 @@
             <div class="">
                 <img class="role" src="/public/img/game/girl.png" />
             </div>
-            <div class="chat chat-right hide" id="chatRight">
-                123131231232321
+            <div class="chat chat-right hide animated  fadeIn" id="chatRight">
+                
             </div>
         </div>
+         <div id="start-question" class="start-question animated hide fadeInUp">
+            开始答题
+        </div>
+    </div>
+    <div id="question" class="hide">
+         <div class="question-chushi   animated  fadeInLeft">
+            <div class="question-chushi_wrap">
+                <img class="question-chushi_img" src="/public/img/game/chushi.png" />
+            </div>
+            <div class="question-title">
+                this is questoin
+            </div>
+        </div>
+         <div class="questions-list  animated  fadeIn" id="questions_area">
+            
+        </div>
+        <div class="questions-grade hide">
+             <div class="">
+                <img class="grade-role" src="/public/img/game/girl.png" />
+            </div>
+        <div class="grade-chat"></div>
+
+        </div>
+         <div id="confirm-answer" class="animated hide fadeInUp">
+            确定
+        </div>
+    </div>
+    <div id="over" class="hide">
+        <div class="over-chushi   animated  adeInLeft">
+            <div class="question-chushi_wrap">
+                <img class="question-chushi_img" src="/public/img/game/chushi.png" />
+            </div>
+        </div>
+        <div class="over-chat">得了50分,继续努力呦</div>
+      <!--   <div class="over-grade">
+            123
+        </div> -->
+        <div class='over-role_wrap'>
+             <div class="">
+                <img class="over-role" src="/public/img/game/boy.png" />
+            </div>
+        </div>
+        <div class="restart-game">
+            重新开始
+        </div>
+    </div>
+    <div id="alert" class="">
+        请先选择答案
     </div>
 </div>
