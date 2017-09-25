@@ -1,6 +1,6 @@
 export default {
     // cdn
-    cdnHost: 'http://183.70.40.54:8333'
+    cdnHost: 'http://183.70.60.157:8333'
 
 };
 

@@ -23,7 +23,7 @@ gulp.task('minifyCss', function() {
 
 gulp.task('minifyJs', function() {
     return gulp.src('src/server/public/js/*')
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
