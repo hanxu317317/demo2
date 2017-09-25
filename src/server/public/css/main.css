@@ -105,7 +105,7 @@ span{
 #index .role {
 	height: 480px;
 	width: 370px;
-	top: 25%;
+	top: 36%;
 	position: absolute;
 }
 #index .role.role_girl {
@@ -195,7 +195,7 @@ span{
 	width: 400px;
     height: auto;
     position: absolute;
-    top: 200px;
+    top: 338px;
     left: 100px;
 }
 #intro .chat {
@@ -239,7 +239,7 @@ span{
 	width: 320px;
     height: auto;
     position: absolute;
-    top: 35%;
+    top: 42%;
     right: 15%;
 }
 
@@ -260,7 +260,7 @@ span{
     width: 400px;
     height: 300px;
     position: absolute;
-    top: 18%;
+    top: 32%;
     left: 8%;
 }
 #question .question-title {
@@ -372,7 +372,7 @@ span{
 .grade-role {
     position: absolute;
     right: 30px;
-    top: 23%;
+    top: 31%;
     width: 411px;
 }
 
@@ -438,7 +438,7 @@ span{
 .over-role_wrap {
     position: absolute;
     right: 4%;
-    top: 11%;
+    top: 17%;
 }
 .over-role {
     width: 500px;

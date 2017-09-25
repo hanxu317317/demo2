@@ -128,7 +128,7 @@ $(document).ready(function() {
       console.log("allRights", allRights);
       console.log("rightNums", rightNums);
       if (allRights == rightNums) {
-        grade = grade + rightNums * perGrade;
+        grade = grade + 25;
         face = 'laugh';
         $(".grade-chat").html(
           "太棒了!<br />"+
