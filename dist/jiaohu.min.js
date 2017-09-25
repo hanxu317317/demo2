@@ -133,7 +133,7 @@ $(document).ready(function() {
         $(".grade-chat").html(
           "太棒了!<br />"+
           "答对了!<br />"+
-          "+"+ rightNums * perGrade +"分<br />"
+          "+"+ 25 +"分<br />"
         )
       } else {
         face = 'cry';
