@@ -3,6 +3,7 @@
  */
 
 var gulp = require('gulp'),
+    autoprefixer = require('gulp-autoprefixer');
     minifyCss = require('gulp-clean-css'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
@@ -14,6 +15,11 @@ gulp.task('minifyCss', function() {
     return gulp.src('src/server/public/css/*')
         .pipe(minifyCss({
             compatibility: 'ie8'
+        }))
+        .pipe(autoprefixer({
+            browsers: ['last 4 versions', 'Android >= 4.0'],
+            cascade: true, //是否美化属性值 默认：true 像这样：
+            remove:true //是否去掉不必要的前缀 默认：true
         }))
         .pipe(rename({
             suffix: '.min'

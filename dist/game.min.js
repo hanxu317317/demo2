@@ -291,8 +291,8 @@ function spliteNumbers(array, number) {
     if (!array instanceof Array) {
         return [];
     }
-    let result = [];
-    for (let i = 0, len = array.length; i < len; i += number) {
+    var result = [];
+    for (var i = 0, len = array.length; i < len; i += number) {
         result.push(array.slice(i, i+number));
     }
 
