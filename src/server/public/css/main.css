@@ -122,8 +122,8 @@ span{
 	height: auto;
 }
 #index .role .girl img, #index .role .boy img {
-	width: 100%;
-	height: 100%;
+	width: 400px;
+	height: auto;
 }
 #index .role .name {
     position: absolute;
