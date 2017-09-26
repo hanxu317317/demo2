@@ -65,6 +65,9 @@ var chatIndex = 0;
 var wordIndex = 0;
 var wordSpeed = 100; // 说话的速度 
 var times = 2000; // 每句话的间隔
+
+// var wordSpeed = 0; // 说话的速度 
+// var times = 0; // 每句话的间隔
 var wordInterval = null;
 // 奇数是厨师.偶数角色
 var chatLog = [
@@ -77,7 +80,7 @@ var chatLog = [
     '对。下一步呢，是将老坛泡菜水与冷开水充分混合，然后加入花椒、胡椒粉、小米辣及味精少许。',
     '原来做一坛泡凤爪要这么多步骤啊！ ',
     '别急，还有最后一步。现在，我们只要将之前煮好的凤爪倒入冷却后的泡菜水中，浸泡24小时就完成了。',
-    '谢谢坛小厨！听了您的讲解，我的口水都快掉下来了。我要亲手试做一下泡凤爪！'
+    '谢谢坛小厨！听了您的讲解，我的口水都快掉下来了。我要亲手试做一下！'
 ];
 
 function chushiChat() {
@@ -138,7 +141,7 @@ function chatGuild() {
 
 var questions = [
     {   
-        title: '第一题, 泡椒的选择是以下哪一种(单选)',
+        title: '以下哪一种辣椒最适合制作泡凤爪？（单选）',
         grade: 25,
         selects: [
             {
@@ -164,7 +167,7 @@ var questions = [
         ],
         right: ['小米辣'],
     }, {
-        title: '第二题, 制作泡椒需要哪些材料呢?(多选)',
+        title: '制作泡凤爪，需要以下那些佐料呢？',
         grade: 3,
         selects: [
             {
@@ -234,7 +237,7 @@ var questions = [
         ],
         right: ['姜', '蒜', '料酒', '白砂糖', '盐', '花椒','胡椒', '味精'],
     }, {
-        title: '第三题, 盛装凤爪的老坛需要哪种水?(单选)',
+        title: '将煮好的凤爪倒入以下哪种水中泡制最为合适？（单选）',
         grade: 13,
         selects: [
             {
@@ -257,7 +260,7 @@ var questions = [
         right: ['凉开水', '泡菜水']
     },
     {
-        title: '第四题, 煮好的凤爪倒入冷却后的泡菜水,需要浸泡多久(单选)',
+        title: '为了保持泡凤爪的最佳味道，应当浸泡多长时间后开始食用？',
         grade: 25,
         selects: [
             {
@@ -298,6 +301,22 @@ function spliteNumbers(array, number) {
 
     return result;
 }
+function fullScreen() {
+    alert("fullScreen");
+                    // var fullScreenButton = $("#fullScreen");
+                    //     fullScreenButton.hide();
+                    var docElm = document.documentElement;
+                    docElm.webkitRequestFullScreen();
+                    if (docElm.requestFullscreen) {  
+                        docElm.requestFullscreen();
+                    } else if (docElm.mozRequestFullScreen) {  
+                        docElm.mozRequestFullScreen();
+                    } else if (docElm.webkitRequestFullScreen) {  
+                        docElm.webkitRequestFullScreen();
+                    } else if (docElm.msRequestFullscreen) {
+                        docElm.msRequestFullscreen();
+                    }
+                }
 
 function renderDifferentTempla(lists) {
 
@@ -305,7 +324,7 @@ function renderDifferentTempla(lists) {
     var top = 0;
     var result = "";
     if (length === 5) {
-        top = 200;
+        top = 150;
         var group = [
             [lists[0], lists[1]],
             [lists[2]],
@@ -397,12 +416,12 @@ function initQuestion() {
 
 function initOver() {
     var sex = 'boy';
-    var name = '有哥儿';
+    var name = '有友哥';
     var face = 'cry';
     var text = '';
     if (role === 0) {
         sex = 'girl';
-        name = '有妹儿';
+        name = '有友妹';
     }
 
     if (grade >= 60) {

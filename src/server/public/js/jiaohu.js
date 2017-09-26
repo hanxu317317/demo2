@@ -44,7 +44,10 @@ $(document).ready(function() {
            
        }, 300);
     });
-
+    $("#fullScreen").on("tap", function() {
+      alert("1")
+      fullScreen();
+    })
     $("#start-game").on("tap", function() {
         // 关掉 首页index场景
         removeIndex();
@@ -123,11 +126,12 @@ $(document).ready(function() {
 
       var perGrade  = questions[questionIndex].grade;
       var rightNums = $(".check.right").length;
+      var errorNumber = $(".check.error").length;
       var allRights = questions[questionIndex].right.length;
       var face = 'cry';
       console.log("allRights", allRights);
       console.log("rightNums", rightNums);
-      if (allRights == rightNums) {
+      if (allRights == rightNums && errorNumber == 0) {
         grade = grade + 25;
         face = 'laugh';
         $(".grade-chat").html(
