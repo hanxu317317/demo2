@@ -196,7 +196,7 @@ span{
 	width: 400px;
     height: auto;
     position: absolute;
-    top: 338px;
+    bottom: 30px;
     left: 100px;
 }
 #intro .chat {
@@ -205,16 +205,16 @@ span{
     background: white;
     border-radius: 10px;
 	top: 36%;
-	min-width:36%;
 	width: 45%;
 	height: 20%;
-    position: absolute;
+    position: fixed;
     left: 28%;
 	font-size: 30px;
 	box-shadow: 0 0 3px 4px #c0c0c0;
 }
 #intro .chat-right {
-	left: 5%;
+	left: 44%;
+    width: 30%;
 }
 #intro .chat-left:after {
 	content: '';
@@ -239,9 +239,9 @@ span{
 #intro .role {
 	width: 320px;
     height: auto;
-    position: absolute;
-    top: 42%;
-    right: 15%;
+    position: fixed;
+    bottom: -5px;
+    right: 9%;
 }
 
 #question {
