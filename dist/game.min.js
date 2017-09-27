@@ -382,7 +382,7 @@ function renderQuestion() {
     var words = list.title;
     function oneByOne(){
         $(".question-title").html(words.substring(0, questionTitleIndex++));
-        if (questionTitleIndex > words.length) {
+        if (answerOver == true && questionTitleIndex > words.length) {
             clearInterval(questionsTitleInterval);
             renderList(list.selects);
         }
