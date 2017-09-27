@@ -90,7 +90,7 @@ $(document).ready(function() {
          }
       }
     });
-    $("#confirm-answer").on("tap", function() {
+    $(document).on('touchstart', '#confirm-answer', function() {
 
       if (questionIndex ==4) {
         initOver();
