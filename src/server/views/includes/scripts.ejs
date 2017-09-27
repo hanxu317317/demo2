@@ -1,15 +1,15 @@
 <% if (process.env.NODE_ENV === 'production') {  %>
 
 <!-- jQuery、json3 -->
-<script src="/assets/jquery.min.js"></script>
-<script src="/assets/jquery.mobile.min.js"></script>
+<script src="<%= global.cdnHost %>/assets/jquery.min.js"></script>
+<script src="<%= global.cdnHost %>/assets/jquery.mobile.min.js"></script>
 
 
 <!-- 每个页面对应的自己的 js -->
 <% if(typeof filename === 'string'){ %>
-<script src="/assets/<%= filename %>.min.js?_=<%= global.fileHash %>"></script>
-<script src="/assets/global.min.js?_=<%= global.fileHash %>"></script>
-<script src="/assets/jiaohu.min.js?_=<%= global.fileHash %>"></script>
+<script src="<%= global.cdnHost %>/assets/<%= filename %>.min.js?_=<%= global.fileHash %>"></script>
+<script src="<%= global.cdnHost %>/assets/global.min.js?_=<%= global.fileHash %>"></script>
+<script src="<%= global.cdnHost %>/assets/jiaohu.min.js?_=<%= global.fileHash %>"></script>
 <% } %>
 <% } else { %>
 <!-- jQuery -->
