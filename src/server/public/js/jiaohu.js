@@ -69,7 +69,7 @@ $(document).ready(function() {
 
     // $(".list-item").live("tap", function() {
     // })
-    $(document).on('tap', '.list-item', function() {
+    $(document).on('touchstart', '.list-item', function() {
       if (answerOver) {
         return 0;
       }
