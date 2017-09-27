@@ -51,6 +51,7 @@ export default class HeadSwiper extends Component {
             // prevButton: '.swiper-button-prev',
             initialSlide: 2,
             slidesPerView: 3,
+            simulateTouch: false,
             touchMoveStopPropagation: false,
             // loop: false,
             spaceBetween: 50,
