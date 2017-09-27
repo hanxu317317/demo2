@@ -80,6 +80,7 @@ span{
 .index-head  {
         position: absolute;
     top: 13%;
+    color:#ff0017;
     width: 100%;
     font-size: 77px;
 }
@@ -147,6 +148,7 @@ span{
 
     right: 0;
     /*color: #00f;*/
+    color:#ff0017;
     text-shadow: 0px 0px 3px #fff;
 }
 

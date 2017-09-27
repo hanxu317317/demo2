@@ -32,7 +32,7 @@ $(document).ready(function() {
     initIndex();
     // initQuestion();
     // 选择角色
-    $(".select_role .role .avatar").on("touchstart", function() {
+     $(document).on('touchstart', '.select_role .role .avatar', function() {
         var _this = this;
        $(this).addClass("animated shake");
        setTimeout(function() {
@@ -44,11 +44,8 @@ $(document).ready(function() {
            
        }, 300);
     });
-    $("#fullScreen").on("tap", function() {
-      alert("1")
-      fullScreen();
-    })
-    $("#start-game").on("touchstart", function() {
+ 
+    $(document).on('touchstart', '#start-game', function() {
         // 关掉 首页index场景
         removeIndex();
         var src = role === 0 ? '/public/img/game/girl_2.png' : '/public/img/game/boy.png'
@@ -58,8 +55,7 @@ $(document).ready(function() {
         }, 1000)
         // 进入场景2
     });
-
-    $("#start-question").on("touchstart", function() {
+    $(document).on('touchstart', '#start-question', function() {
         // 关掉对话
         removeChat();
         setTimeout(function() {
