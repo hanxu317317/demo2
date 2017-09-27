@@ -63,11 +63,11 @@ function removeChat() {
 
 var chatIndex = 0;
 var wordIndex = 0;
-// var wordSpeed = 100; // 说话的速度 
-// var times = 2000; // 每句话的间隔
+var wordSpeed = 100; // 说话的速度 
+var times = 2000; // 每句话的间隔
 
-var wordSpeed = 0; // 说话的速度 
-var times = 0; // 每句话的间隔
+// var wordSpeed = 0; // 说话的速度 
+// var times = 0; // 每句话的间隔
 var wordInterval = null;
 // 奇数是厨师.偶数角色
 var chatLog = [
@@ -381,11 +381,8 @@ function renderQuestion() {
     var list = questions[questionIndex];
     var words = list.title;
     function oneByOne(){
-        $(".question-title").html(words.substring(0, questionTitleIndex++));
-        if (answerOver == false && questionTitleIndex > words.length) {
-            clearInterval(questionsTitleInterval);
-            renderList(list.selects);
-        }
+        $(".question-title").html(words);
+        renderList(list.selects);
     }
     function renderList(lists) {
         console.log("list", lists)
@@ -403,7 +400,7 @@ function renderQuestion() {
         }
         renderDifferentTempla(result);
     }
-    questionsTitleInterval = setInterval(oneByOne, 0);
+    questionsTitleInterval = oneByOne();
 }
 
 function initQuestion() {
