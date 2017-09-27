@@ -78,9 +78,10 @@ span{
     top: 0 !important;
 }
 .index-head  {
-    position: absolute;
-    top: 30px;
+        position: absolute;
+    top: 13%;
     width: 100%;
+    font-size: 77px;
 }
 .game-bg {
 	background: url(/public/img/game/bg.jpg) no-repeat;
