@@ -26,9 +26,9 @@ export default class App extends Component {
     }
 
     componentDidUpdate() {
-        $("#closeButton").mouseover(function(){
-            $("#modal-top").modal('hide')
-        });
+         $(document).on('touchstart', '#closeButton', function() {
+             $("#modal-top").modal('hide')
+         });
 
         $("#closeButton").click(function(){
             $("#modal-top").modal('hide')
