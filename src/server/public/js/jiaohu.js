@@ -1,5 +1,6 @@
 var role = -1;
 var answerOver = false;
+var play = false;
 function isMulti() {
   var type = questions[questionIndex].right;
   // console.log("type", questions[questionIndex])
@@ -28,9 +29,21 @@ function testResult () {
     }
   }
 }
+function audioAutoPlay() {
+  if (play==true) {return 0};
+    var audio = document.getElementById('bgmusic');
+      audio.play();
+      play = false
+}
+document.addEventListener('DOMContentLoaded', function () {
+    audioAutoPlay();
+});
+
 $(document).ready(function() {
-    var music = document.getElementById("bgmusic");
-    music.play();
+
+    document.addEventListener("touchstart", function() {
+      audioAutoPlay();
+    });
     initIndex();
     // initQuestion();
     // 选择角色
@@ -46,7 +59,10 @@ $(document).ready(function() {
            
        }, 300);
     });
- 
+    $("#test").click(function() {
+      audioAutoPlay();
+      alert("click");
+    });
     $(document).on('touchstart', '#start-game', function() {
         // 关掉 首页index场景
         removeIndex();
