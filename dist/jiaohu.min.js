@@ -35,19 +35,15 @@ function audioAutoPlay() {
       audio.play();
       play = false
 }
-document.addEventListener('DOMContentLoaded', function () {
-    audioAutoPlay();
-});
+
 
 $(document).ready(function() {
 
-    document.addEventListener("touchstart", function() {
-      audioAutoPlay();
-    });
     initIndex();
     // initQuestion();
     // 选择角色
      $(document).on('touchstart', '.select_role .role .avatar', function() {
+      audioAutoPlay();
         var _this = this;
        $(this).addClass("animated shake");
        setTimeout(function() {
