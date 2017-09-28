@@ -417,16 +417,20 @@ function initOver() {
     var name = '有友哥';
     var face = 'cry';
     var text = '';
+    var redGrade = '<span style="color: red">' + grade + "</span>";
     if (role === 0) {
         sex = 'girl';
         name = '有友妹';
     }
 
-    if (grade >= 60) {
+    if (grade == 100) {
         face = 'laugh';
-        text = '不错呦' + name + ', 得到了:' + grade + '分!';
-    } else {
-        text = '得了' + grade + '分,' + name + '要继续努力呦';
+        text = '恭喜你！全部答对了！' + redGrade + '分'
+    } else if (grade == 75) {
+        face = 'laugh';
+        text = '不错呦！得到了' + redGrade + '分！加油！'
+    } else  {
+        text = '您的得分是：'+ redGrade +' 分，还要继续努力呦！'
     }
     $(".over-chat").html(text);
     $(".over-role").attr("src", '/public/img/game/' + sex + '_' + face + '.png');

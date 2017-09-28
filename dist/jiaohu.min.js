@@ -133,14 +133,14 @@ $(document).ready(function() {
         $(".grade-chat").html(
           "太棒了!<br />"+
           "答对了!<br />"+
-          "+"+ 25 +"分<br />"
+          "加"+ '<span style="color: red">'+ 25 +'</span>' +"分!<br />"
         )
       } else {
         face = 'cry';
         $(".grade-chat").html(
           "呃...<br />"+
           "答错了!<br />"+
-          "好遗憾"
+          "好遗憾......"
         )
       }
       
