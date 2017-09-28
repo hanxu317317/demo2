@@ -29,6 +29,8 @@ function testResult () {
   }
 }
 $(document).ready(function() {
+    var music = document.getElementById("bgmusic");
+    music.play();
     initIndex();
     // initQuestion();
     // 选择角色
