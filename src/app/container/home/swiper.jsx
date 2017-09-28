@@ -22,17 +22,18 @@ const INFO = [
         index: '4',
         href: 'market'
     },
+    
+    {
+        title: '产品展示 ',
+        index: '6',
+        href: 'goods'
+    },
     {
         title: '董事长致辞',
         index: '5',
         href: 'ceo'
 
     },
-    {
-        title: '产品展示 ',
-        index: '6',
-        href: 'goods'
-    }
 ];
 
 export default class HeadSwiper extends Component {
